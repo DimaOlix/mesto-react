@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/mesto-react-gh-pages/static/css/main.77224190.chunk.css",
-    "main.js": "/mesto-react-gh-pages/static/js/main.b681c497.chunk.js",
-    "main.js.map": "/mesto-react-gh-pages/static/js/main.b681c497.chunk.js.map",
-    "runtime-main.js": "/mesto-react-gh-pages/static/js/runtime-main.a38802e2.js",
-    "runtime-main.js.map": "/mesto-react-gh-pages/static/js/runtime-main.a38802e2.js.map",
-    "static/js/2.1d06571e.chunk.js": "/mesto-react-gh-pages/static/js/2.1d06571e.chunk.js",
-    "static/js/2.1d06571e.chunk.js.map": "/mesto-react-gh-pages/static/js/2.1d06571e.chunk.js.map",
-    "index.html": "/mesto-react-gh-pages/index.html",
-    "precache-manifest.f2de23a5d4d580877db55984ee3603cb.js": "/mesto-react-gh-pages/precache-manifest.f2de23a5d4d580877db55984ee3603cb.js",
-    "service-worker.js": "/mesto-react-gh-pages/service-worker.js",
-    "static/css/main.77224190.chunk.css.map": "/mesto-react-gh-pages/static/css/main.77224190.chunk.css.map",
-    "static/media/index.css": "/mesto-react-gh-pages/static/media/VectorAva.d476a8b8.svg",
-    "static/media/logo.svg": "/mesto-react-gh-pages/static/media/logo.51772f7c.svg"
+    "main.css": "/mesto-react/static/css/main.494028b1.chunk.css",
+    "main.js": "/mesto-react/static/js/main.980d8540.chunk.js",
+    "main.js.map": "/mesto-react/static/js/main.980d8540.chunk.js.map",
+    "runtime-main.js": "/mesto-react/static/js/runtime-main.c1099b2e.js",
+    "runtime-main.js.map": "/mesto-react/static/js/runtime-main.c1099b2e.js.map",
+    "static/js/2.1d06571e.chunk.js": "/mesto-react/static/js/2.1d06571e.chunk.js",
+    "static/js/2.1d06571e.chunk.js.map": "/mesto-react/static/js/2.1d06571e.chunk.js.map",
+    "index.html": "/mesto-react/index.html",
+    "precache-manifest.8f1b05758264f73a8ce2a1888a208724.js": "/mesto-react/precache-manifest.8f1b05758264f73a8ce2a1888a208724.js",
+    "service-worker.js": "/mesto-react/service-worker.js",
+    "static/css/main.494028b1.chunk.css.map": "/mesto-react/static/css/main.494028b1.chunk.css.map",
+    "static/media/index.css": "/mesto-react/static/media/VectorAva.d476a8b8.svg",
+    "static/media/logo.svg": "/mesto-react/static/media/logo.51772f7c.svg"
   }
 }
