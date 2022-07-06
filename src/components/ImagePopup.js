@@ -23,9 +23,9 @@ function ImagePopup(props) {
         <img 
           className="popup__photo-element" 
           src={`${props.card}` ? props.card.link : ''} 
-          alt="картинка"
+          alt={props.card.name}
         />
-        <h3 className="popup__title-photo"></h3>
+        <h3 className="popup__title-photo">{props.card.name}</h3>
       </div>
     </div>
   )
