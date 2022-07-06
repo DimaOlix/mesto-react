@@ -1,29 +1,39 @@
 import React from 'react';
 
-function PopupWithForm(props) {
-
+function PopupWithForm({
+  onClose, 
+  isOpen, 
+  name, 
+  title, 
+  children, 
+  buttonText
+}) {
+  
   function handleCloseOverlay(evt) {
-    return evt.target.classList.contains('popup_opened') && props.onClose();
+    return evt.target.classList.contains('popup_opened') && onClose();
   }
 
   return (
-    <div className={`popup popup_type_${props.name} ${props.isOpen}`}
+    <div className={`popup popup_type_${name} ${isOpen}`}
       onClick={handleCloseOverlay}>
 
       <div className="popup__container">
         
         <button
-          className={`popup__close popup__close_type_${props.name}`}
+          className={`popup__close popup__close_type_${name}`}
           type="button"
           aria-label="Закрыть"
-          onClick={props.onClose}></button>
+          onClick={onClose}></button>
 
-        <h2 className="popup__title">{props.title}</h2>
+        <h2 className="popup__title">{title}</h2>
         
         <form 
-          className={`form form_type_${props.name}`} 
-          name={`popup-${props.name}`} 
-          noValidate/>{props.children}
+          className={`form form_type_${name}`} 
+          name={`popup-${name}`} 
+          noValidate/>{children}
+        <button className="form__button"
+          type="submit" 
+          name="save-button">{buttonText}</button>
       </div>
     </div>
   )

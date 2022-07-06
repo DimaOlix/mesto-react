@@ -1,13 +1,12 @@
 import React from 'react';
 
-function ImagePopup(props) {
-
+function ImagePopup({onClose, card}) {
   function handleCloseOverlay(evt) {
-    return evt.target.classList.contains('popup_opened') && props.onClose();
+    return evt.target.classList.contains('popup_opened') && onClose();
   }
 
   return (
-    <div className={`popup popup_type_photo ${props.card ? 'popup_opened' : ''}`} 
+    <div className={`popup popup_type_photo ${card && 'popup_opened'}`} 
       onClick={handleCloseOverlay}>
 
       <div className="popup__container-photo">
@@ -16,16 +15,16 @@ function ImagePopup(props) {
           className="popup__close popup__close_type_image"
           type="button"
           aria-label="Закрыть"
-          onClick={props.onClose}>
+          onClick={onClose}>
           
         </button>
         
         <img 
           className="popup__photo-element" 
-          src={`${props.card}` ? props.card.link : ''} 
-          alt={props.card.name}
+          src={!card ? '' : card.link} 
+          alt={!card ? '' : card.name}
         />
-        <h3 className="popup__title-photo">{props.card.name}</h3>
+        <h3 className="popup__title-photo">{!card ? '' : card.name}</h3>
       </div>
     </div>
   )
