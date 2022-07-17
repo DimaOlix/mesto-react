@@ -86,7 +86,7 @@ class Api {
   }
 
   addCard(title, link) {
-
+    console.log(link)
     return fetch( `${this.url}/cards`, {
       method: 'POST',
       headers: {
@@ -124,9 +124,9 @@ class Api {
     })
   }
 
-  setLikeCard(cardId) {
+  changeLikeCardStatus(cardId, isLiked) {
     return fetch( `${this.url}/cards/${cardId}/likes`, {
-      method: 'PUT',
+      method: `${isLiked ? 'DELETE' : 'PUT'}`,
       headers: {
         authorization: this.token,
         'Content-Type': 'application/json'
@@ -140,24 +140,6 @@ class Api {
       return result;
     })
   }
-
-  removeLikeCard(cardId) {
-    return fetch( `${this.url}/cards/${cardId}/likes`, {
-      method: 'DELETE',
-      headers: {
-        authorization: this.token,
-        'Content-Type': 'application/json'
-        }
-    })
-
-    .then((res) => {
-      return this._getResponseServer(res);
-    })
-    .then((result) => {
-      return result;
-    })
-  }
-
 }
 
 export default new Api('https://mesto.nomoreparties.co/v1/cohort-43','0cd5671f-d9e2-44a6-902a-4db007f7a8f2') 

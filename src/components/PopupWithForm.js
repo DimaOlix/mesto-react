@@ -1,12 +1,14 @@
 import React from 'react';
 
+
 function PopupWithForm({
   onClose, 
   isOpen, 
   name, 
   title, 
   children, 
-  buttonText
+  buttonText,
+  onSubmit
 }) {
   
   function handleCloseOverlay(evt) {
@@ -28,12 +30,20 @@ function PopupWithForm({
         <h2 className="popup__title">{title}</h2>
         
         <form 
-          className={`form form_type_${name}`} 
-          name={`popup-${name}`} 
-          noValidate/>{children}
-        <button className="form__button"
+        className={`form form_type_${name}`} 
+        name={`popup-${name}`} 
+        noValidate
+        onSubmit={onSubmit}>
+
+          {children}
+
+          <button className="form__button"
           type="submit" 
-          name="save-button">{buttonText}</button>
+          name="save-button">
+            {buttonText}
+          </button>
+
+        </form>
       </div>
     </div>
   )
