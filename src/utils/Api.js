@@ -22,9 +22,6 @@ class Api {
     .then((res) => {
       return this._getResponseServer(res);
     })
-    .then((result) => {
-      return result;
-    })
   }
 
   getUserInfo() {
@@ -36,9 +33,6 @@ class Api {
     })
     .then((res) => {
       return this._getResponseServer(res);
-    })
-    .then((result) => {
-      return result;
     })
   }
 
@@ -55,12 +49,8 @@ class Api {
         about: about
       })
     })
-
     .then((res) => {
       return this._getResponseServer(res);
-    })
-    .then((result) => {
-      return result;
     })
   }
 
@@ -76,17 +66,12 @@ class Api {
         avatar: link,
       })
     })
-
     .then((res) => {
       return this._getResponseServer(res);
-    })
-    .then((result) => {
-      return result;
     })
   }
 
   addCard(title, link) {
-    console.log(link)
     return fetch( `${this.url}/cards`, {
       method: 'POST',
       headers: {
@@ -98,12 +83,8 @@ class Api {
         link: link
       })
     })
-
     .then((res) => {
       return this._getResponseServer(res);
-    })
-    .then((result) => {
-      return result;
     })
   }
 
@@ -115,12 +96,8 @@ class Api {
         'Content-Type': 'application/json'
         }
     })
-
     .then((res) => {
       return this._getResponseServer(res);
-    })
-    .then((result) => {
-      return result;
     })
   }
 
@@ -132,12 +109,8 @@ class Api {
         'Content-Type': 'application/json'
         }
     })
-
     .then((res) => {
       return this._getResponseServer(res);
-    })
-    .then((result) => {
-      return result;
     })
   }
 }

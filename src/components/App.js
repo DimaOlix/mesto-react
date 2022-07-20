@@ -151,7 +151,7 @@ function App() {
         <Footer/>
       </div>
     </CurrentUserContext.Provider>
-  );
+  )
 }
 
 export default App;
