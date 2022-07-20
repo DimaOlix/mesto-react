@@ -13,7 +13,7 @@ function AddPlacePopup({
 
   React.useEffect(() => {
     if(!isOpen) {
-    setValues('');
+    setValues({});
     }
   }, [isOpen, setValues])
 
@@ -24,7 +24,7 @@ function AddPlacePopup({
       link: values.link
     });
   } 
-console.log(values.link)
+
   return (
     <PopupWithForm
     onClose={onClose}
@@ -52,7 +52,7 @@ console.log(values.link)
     </span>
     <input
       className="form__input form__input_value_link"
-      value={`${values.link || ''}`}
+      value={values.link || ''}
       onChange={handleChange}
       type="url"
       required

@@ -1,5 +1,5 @@
 import React from "react";
-import { CurrentUserContext } from '../contexts/CurrentUserContext.js'
+import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 import PopupWithForm from "./PopupWithForm.js";
 import { useForm } from "../hooks/useForm.js";
 
@@ -8,32 +8,18 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
 
   const currentUser = React.useContext(CurrentUserContext);
 
-  const{values, handleChange, setValues} = useForm({});
-
-
-
-  const [nameUser, setNameUser] = React.useState('');
-  const [descriptionUser, setDescriptionUser] = React.useState('');
+  const{values, handleChange, setValues} = useForm({name: '', activity: ''});
 
   React.useEffect(() => {
-    setNameUser(currentUser.name);
-    setDescriptionUser(currentUser.about);
-  }, [currentUser, isOpen])
-
-  function handleInputUserName(evt) {
-    setNameUser(evt.target.value);
-  }
-
-  function handleInputUserDescription(evt) {
-    setDescriptionUser(evt.target.value);
-  }
+    setValues({name: currentUser.name, activity: currentUser.about});
+  }, [currentUser, isOpen, setValues])
 
   function handleSubmit(e) {
     e.preventDefault();
   
     onUpdateUser({
-      name: nameUser,
-      about: descriptionUser,
+      name: values.name,
+      about: values.activity
     });
   } 
 
@@ -49,10 +35,10 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
       <input
         className="form__input form__input_value_name"
         type="text"
-        name="input-name"
+        name="name"
         id="name-input"
-        value={nameUser}
-        onChange={handleInputUserName}
+        value={values.name}
+        onChange={handleChange}
         required
         minLength="2"
         maxLength="40"
@@ -65,10 +51,10 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
       <input
         className="form__input form__input_value_activity"
         type="text"
-        name="input-activity"
+        name="activity"
         id="activity-input"
-        value={descriptionUser}
-        onChange={handleInputUserDescription}
+        value={values.activity}
+        onChange={handleChange}
         required
         minLength="2"
         maxLength="200"
